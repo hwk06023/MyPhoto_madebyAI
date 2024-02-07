@@ -15,7 +15,7 @@ I plan to serve this through an app or website to create a revenue structure. If
 ## Fine-tuning the RealisticVision model of Stable Diffusion with Dreambooth
 
 #### Architectrue example
-<img src="img/Architecture.png" width=500>
+<img src="img/Architecture.png" width=600>
 
 ### Hyperparameters
 
@@ -32,4 +32,41 @@ The sentences were generated in the format specified by the authors, **"a [V] [c
 
 ### LoRA (Low Rank Adaptation)
 
-<img src = "img/lora.png" width=400>
+<img src = "img/lora.png" width=400> <br/>
+
+Rather than updating the entire model's weights, effective fine-tuning is achieved by only updating additional parameters using the Low-rank technique. This approach results in significant savings of time and resources. <br/>
+
+It was convenient to apply since it is available with Dreambooth on Huggingface. <br/>
+
+### Result - ID Photo
+
+<img src ="img/Good_Result.png" width=400> <br/>
+
+However, I thought it was impractical from a business standpoint to conduct fine-tuning for personalized models every time the number of users increases. Therefore, an effective service pipeline is needed through a generic model.
+
+## Effective service pipeline through a generic model
+
+### Service pipeline
+
+1. Creating Reference Profile Photos with a Stable Diffusion-Based Model
+2. Getting the subject's pose with DWPose
+3. Using the image2text model to obtain information on the subject's attire, expression, and background to input into the prompt
+4. Feeding IP Adapter and Open-pose data into ControlNet, which is based on the Realistic Vision model (Generic model), to generate a temporary profile photo.
+5. Completing the image by enhancing the detailed facial information with FaceSwapLab's INSwapper
+
+### DWPose example
+
+<img src="img/DWPose.png" width=200> <br/>
+
+### Result - Profile Photo
+
+Previously, fine-tuning for each user took about 30 minutes due to the time required for the process. However, this pipeline's process could be completed in around **just 1 minute**, which made it significantly meaningful. <br/>
+
+<img src="img/Good_profile/0.png" width=300> <br/>
+<img src="img/Good_profile/1.png" width=300> <br/>
+<img src="img/Good_profile/2.png" width=300> <br/>
+<img src="img/Good_profile/3.png" width=300> <br/>
+
+However, there were drawbacks in terms of performance. The results appeared somewhat Westernized, leading me to conclude that the Realistic Vision model used was biased due to being fine-tuned with predominantly Western data. Consequently, I wanted to retest using a Realistic Vision model trained primarily on Asian data, but I could only find models trained mainly on female Asian data. <br/>
+
+Realistically, if data and resources are available, it would be more effective in the long run to build and service our own generic Realistic Vision models based on different races and genders. <br/>
