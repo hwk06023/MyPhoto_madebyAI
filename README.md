@@ -6,9 +6,16 @@ I plan to serve this through an app or website to create a revenue structure. If
 
 ### Outline
 
-1. [Fine-tuning the RealisticVision model of Stable Diffusion with Dreambooth](##Fine-tuning-the-RealisticVision-model-of-Stable-Diffusion-with-Dreambooth)
-
-2. [Effective service pipeline through a generic model](##Effective-service-pipeline-through-a-generic-model)
+- [Fine-tuning the RealisticVision model of Stable Diffusion with Dreambooth](#fine-tuning-the-realisticvision-model-of-stable-diffusion-with-dreambooth)
+  * [Architectrue example](#architectrue-example)
+  * [Hyperparameters](#hyperparameters)
+  * [Application](#application)
+  * [LoRA (Low Rank Adaptation)](#lora--low-rank-adaptation-)
+  * [Result - ID Photo](#result---id-photo)
+- [Effective service pipeline through a generic model](#effective-service-pipeline-through-a-generic-model)
+  * [Service pipeline](#service-pipeline)
+  * [DWPose example](#dwpose-example)
+  * [Result - Profile Photo](#result---profile-photo)
 
 
 
