@@ -2,7 +2,12 @@
 
 This repo is for an AI service project that provides ID photos and profile photos. The service is based on the Stable Diffusion model and the Dreambooth model. The Stable Diffusion model is a generative model that can generate high-quality images. The Dreambooth model is a fine-tuned version of the Stable Diffusion model that can generate images with a specific style. <br/>
 
-I plan to serve this through an app or website to create a revenue structure. If you're interested in collaborating, please contact me at hwk06023@gmail.com. <br/>
+Model files are not included in this repo. <br/>
+
+I plan to serve this through an app or website to create a revenue structure. If you're interested in collaborating or just want to get your personalized result, please don't hesitate contact me at hwk06023@gmail.com.<br/>
+
+Any feedback or advice is welcome. <br/>
+
 
 ### Outline
 
@@ -77,3 +82,4 @@ Previously, fine-tuning for each user took about 30 minutes due to the time requ
 However, there were drawbacks in terms of performance. The results appeared somewhat Westernized, leading me to conclude that the Realistic Vision model used was biased due to being fine-tuned with predominantly Western data. Consequently, I wanted to retest using a Realistic Vision model trained primarily on Asian data, but I could only find models trained mainly on female Asian data. <br/>
 
 Realistically, if data and resources are available, it would be more effective in the long run to build and service our own generic Realistic Vision models based on different races and genders. <br/>
+
